@@ -2,7 +2,7 @@
 title: "school_data"
 author: "Grace"
 date: "2025-04-28"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -20,8 +20,32 @@ invisible(lapply(packages, library, character.only = TRUE))
 ```
 Reading in the data
 ```{r}
-dataFull <- read.csv("")
+dataFull <- read.csv("StudentPerformanceFactors.csv")
+dataFull
 
 ```
 
+```{r re-scoring data}
+
+
+
+
+```
+
+
+
+
+
+Creating some simple regressions to model some factors for student success
+```{r correlations}
+#EDA with correlations first 
+corr <- cor(dataFull)
+corr_r <- rcorr(dataFull)
+corr_p <- cor.mtest(dataFull, conf.level=0.95)
+
+corr %>%
+  corrplot()
+
+
+```
 
